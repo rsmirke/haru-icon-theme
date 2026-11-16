@@ -59,6 +59,7 @@ terminal_bottom = "#3A1A38"
 "io.gitlab.metadatacleaner.metadatacleaner" = "art"
 "org.gnome.design.AppIconPreview" = "art"
 "org.gnome.Adwaita1.Demo" = "art"
+"display-im7.q16" = "art"  # ImageMagick: Yaru-style wizard hat, greyscale (16 Nov 2026)
 
 # Plates (rule agreed 10 Nov 2026, like Apple):
 #   cream (default) = colourful icons with no white outline

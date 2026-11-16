@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128"><defs>
+<linearGradient id="bg" x1="8" y1="8" x2="120" y2="120" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#5e5e5e"/><stop offset="1" stop-color="#383838"/></linearGradient>
+<linearGradient id="hat" x1="30" y1="30" x2="100" y2="92" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d4d4d4"/></linearGradient>
+<linearGradient id="brim" x1="0" y1="82" x2="0" y2="104" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#e6e6e6"/><stop offset="1" stop-color="#b0b0b0"/></linearGradient>
+<linearGradient id="band" x1="30" y1="0" x2="98" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#a9a9a9"/><stop offset="1" stop-color="#8c8c8c"/></linearGradient>
+<filter id="sh" x="-.3" y="-.3" width="1.6" height="1.6"><feGaussianBlur stdDeviation="2.4"/></filter>
+<clipPath id="lit"><path d="M0 0 H76 L66 100 H0Z"/></clipPath>
+</defs>
+<rect width="128" height="128" fill="url(#bg)"/><rect x="64" y="0" width="64" height="128" fill="#fff" opacity=".12"/><path d="M128 74 L74 128 H128Z" fill="#fff" opacity=".10"/><path d="M128 74 L74 128" stroke="#000" stroke-opacity=".08" stroke-width=".8"/>
+<g opacity=".22" filter="url(#sh)" transform="translate(2.5 3.5)"><path d="M30 92 C38 75 47 55 55 40 C62 27 74 17 93 21 C100 22.5 103 26 102 29.5 C97 27 89 27.5 85 34 C80 42 82 60 98 92 Z"/><ellipse cx="64" cy="93" rx="42" ry="10.5"/></g>
+<ellipse cx="64" cy="93" rx="42" ry="10.5" fill="url(#brim)"/>
+<path d="M30 92 C38 75 47 55 55 40 C62 27 74 17 93 21 C100 22.5 103 26 102 29.5 C97 27 89 27.5 85 34 C80 42 82 60 98 92 Z" fill="url(#hat)"/>
+<path d="M30 92 C38 75 47 55 55 40 C62 27 74 17 93 21 C100 22.5 103 26 102 29.5 C97 27 89 27.5 85 34 C80 42 82 60 98 92 Z" fill="#fff" opacity=".0" clip-path="url(#lit)"/>
+<path d="M34.6 82.5 C50 87.5 78 87.5 93.6 82.5 L97.6 91.5 C80 97 48 97 30.4 91.5 Z" fill="url(#band)"/>
+<path d="M30.3 92 C48 97.5 80 97.5 97.7 92" fill="none" stroke="#000" stroke-opacity=".12" stroke-width="1"/>
+<path d="M60.00,56.00 L62.21,60.96 L67.61,61.53 L63.58,65.16 L64.70,70.47 L60.00,67.76 L55.30,70.47 L56.42,65.16 L52.39,61.53 L57.79,60.96Z" fill="#6a6a6a"/>
+<path d="M70.27,42.86 L71.87,45.23 L74.71,45.03 L72.95,47.27 L74.02,49.92 L71.34,48.94 L69.16,50.77 L69.26,47.93 L66.84,46.42 L69.58,45.63Z" fill="#6a6a6a"/>
+<path d="M48.56,50.85 L49.08,52.96 L51.17,53.55 L49.33,54.71 L49.40,56.88 L47.74,55.48 L45.70,56.22 L46.51,54.21 L45.17,52.50 L47.34,52.65Z" fill="#6a6a6a"/>
+</svg>
