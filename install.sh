@@ -49,7 +49,7 @@ chmod +x "$LIB/haru.py" "$LIB/uninstall.sh" "$LIB/accent-watch.sh"
 [ -f "$CONF/config.toml" ] || cp "$HERE/config.user.toml" "$CONF/config.toml"
 
 touch "$STATE/installed"
-python3 "$LIB/haru.py" generate --sheet
+python3 "$LIB/haru.py" generate --sheet --no-refresh
 
 if [ -z "${NO_UNITS:-}" ]; then
     cp "$HERE/systemd/"haru*.path "$HERE/systemd/"haru*.service "$UNITS/"
@@ -57,8 +57,12 @@ if [ -z "${NO_UNITS:-}" ]; then
     systemctl --user enable --now haru.path
 fi
 
-# switch away and back so GNOME Shell drops any icons it had cached
-gsettings set org.gnome.desktop.interface icon-theme "$(cat "$STATE/previous-theme")"
+# Switch away and back so GNOME Shell rebuilds every app icon. It does not do
+# that when only a launcher changes, so launchers that now name a haru- icon
+# (snaps, AppImages...) would keep a generic gear. Give it a moment to read the
+# new launchers first; hicolor is a neutral stop the accent watcher ignores.
+sleep 3
+gsettings set org.gnome.desktop.interface icon-theme 'hicolor'
 sleep 1
 gsettings set org.gnome.desktop.interface icon-theme 'Haru'
 if [ -z "${NO_UNITS:-}" ]; then

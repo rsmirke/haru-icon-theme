@@ -246,8 +246,7 @@ def active_base_theme(cfg):
     if cfg["theme"].get("base", "auto") != "auto":
         return cfg["theme"]["base"]
     saved = STATE_DIR / "base-theme"
-    cur = subprocess.run(["gsettings", "get", "org.gnome.desktop.interface", "icon-theme"],
-                         capture_output=True, text=True).stdout.strip().strip("'")
+    cur = icon_theme()
     # the theme is built on Yaru: follow the Yaru variant in use (accent, dark),
     # and fall back to plain Yaru when another icon theme was active
     if cur and cur != THEME_NAME and cur.startswith("Yaru"):
@@ -721,6 +720,8 @@ def generate(args):
                                            {a["id"]: n for n, j in jobs.items() for a in j["apps"]})
         write_fallbacks(jobs)
     os.utime(THEME_DIR)
+    if changed_launchers and not args.no_refresh:
+        refresh_shell()
 
     report["apps"] = [{"icon": n, **{k: v for k, v in m.items() if k != "key"}} for n, m in sorted(manifest.items())]
     write_if_changed(DATA_DIR / "report.json", json.dumps(report, indent=1))
@@ -816,12 +817,43 @@ def write_fallbacks(jobs):
         for p in (HICOLOR / sub).glob(ICON_PREFIX + "*"):
             if p not in keep:
                 p.unlink()
+    touch_hicolor()
 
 
 def remove_fallbacks():
     for sub in ("scalable/apps", "256x256/apps"):
         for p in (HICOLOR / sub).glob(ICON_PREFIX + "*"):
             p.unlink()
+    touch_hicolor()
+
+
+def touch_hicolor():
+    # icon themes only notice new files when the theme folder itself changes
+    if HICOLOR.is_dir():
+        os.utime(HICOLOR)
+
+
+def icon_theme():
+    return subprocess.run(["gsettings", "get", "org.gnome.desktop.interface", "icon-theme"],
+                          capture_output=True, text=True).stdout.strip().strip("'")
+
+
+def refresh_shell():
+    """Make GNOME Shell pick up launchers whose Icon= just changed.
+
+    The Shell builds each app-grid icon from the launcher it had loaded at the
+    time and does not rebuild it when only the launcher changes, so a launcher
+    that now points to a new icon name can be left showing the generic gear.
+    Switching the icon theme away and back makes it rebuild every icon. We wait
+    first so the Shell has read the new launchers, and step away to hicolor
+    (not a Yaru variant) so the accent watcher leaves it alone."""
+    if icon_theme() != THEME_NAME:
+        return
+    import time
+    time.sleep(3)
+    subprocess.run(["gsettings", "set", "org.gnome.desktop.interface", "icon-theme", "hicolor"])
+    time.sleep(1)
+    subprocess.run(["gsettings", "set", "org.gnome.desktop.interface", "icon-theme", THEME_NAME])
 
 
 def restore_launchers(args=None):
@@ -945,6 +977,8 @@ def main():
     g = sub.add_parser("generate")
     g.add_argument("--force", action="store_true", help="re-render every icon")
     g.add_argument("--sheet", action="store_true", help="always rebuild the contact sheet")
+    g.add_argument("--no-refresh", action="store_true",
+                   help="do not make GNOME Shell reload icons after launcher changes")
     g.set_defaults(func=generate)
     s = sub.add_parser("sheet")
     s.add_argument("--out")
