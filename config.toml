@@ -80,15 +80,15 @@ plate_top = "#7C7B82"
 plate_bottom = "#46454C"
 
 
-[overrides."org.gnome.Settings"]  # Settings
+[overrides."org.gnome.Settings"]  # Settings: plate = the gear's own dark disc (16 Nov 2026)
 style = "logo"
-plate_top = "#7C7B82"
-plate_bottom = "#46454C"
+plate_top = "#4F4F4F"
+plate_bottom = "#5C5C5C"
 
-[overrides."system-software-update"]  # Software Updater
+[overrides."system-software-update"]  # Software Updater: plate = its own dark disc (16 Nov 2026)
 style = "logo"
-plate_top = "#7C7B82"
-plate_bottom = "#46454C"
+plate_top = "#434343"
+plate_bottom = "#777777"
 
 [overrides."org.gnome.Sysprof"]  # Sysprof
 style = "logo"
