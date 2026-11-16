@@ -1,0 +1,184 @@
+# yaru-squircle settings.
+# Your personal copy lives in ~/.config/yaru-squircle/config.toml (made by install.sh).
+# Edit that one, then run:  ~/.local/share/yaru-squircle/yaru-squircle.py generate
+
+# Apps to leave completely alone (desktop id without .desktop, or icon name).
+skip = []
+
+[theme]
+# "auto" follows the Yaru variant you had active when you installed (e.g. Yaru-blue-dark).
+base = "auto"
+
+[shape]
+plate = 0.875           # plate side as a fraction of the icon canvas (56 px in a 64 px cell)
+exponent = 5.0          # superellipse exponent n (4 = rounder, 6 = squarer)
+filled_scale = 1.05     # "filled" icons: square art is scaled to 105% of the plate, then clipped
+logo_size = 0.72        # "logo" icons: longest side of the logo as a fraction of the plate
+rim_width = 1.0         # hairline rim width in pixels at 128 px and below (scales up above that)
+rim_top_alpha = 0.34    # rim: white at 34% at the top ...
+rim_bottom_alpha = 0.05 # ... fading to 5% at the bottom
+shadow_opacity = 0.28   # contact shadow under "logo" icons
+
+[colors]
+plate_top = "#FCF9F2"
+plate_bottom = "#EEE8DC"
+terminal_top = "#6A305A"
+terminal_bottom = "#3A1A38"
+
+# Per-app overrides. Key = icon name or desktop id (without .desktop).
+# Short form:   "org.gnome.Maps" = "logo"         (filled | logo | terminal | art)
+#   art = finished drawing from art/<icon name>.svg (made by tools/make-art.py)
+# Long form:    [overrides."firefox_firefox"]
+#               style = "logo"
+#               logo_size = 0.8                   (any [shape] key)
+#               icon = "~/Pictures/my-firefox.svg" (use a different source image)
+#               background = "#FFFFFF"            (filled icons: colour behind clipped corners)
+#               plate_top = "#7C7B82"             (logo icons: plate colour, top ...)
+#               plate_bottom = "#46454C"          (... and bottom)
+#               rim_top_alpha = 0.45              (this icon's rim brightness, top / bottom)
+#               rim_bottom_alpha = 0.18
+#               plate_checker = ["#D8B48A", "#A97D56"]  (a board pattern instead of a gradient)
+#               checker_size = 4
+[overrides]
+# Your picks (9 Nov 2026): Yaru's own drawing filling the squircle ...
+"org.gnome.Maps" = "art"
+"org.gnome.Showtime" = "art"
+"org.gnome.Papers" = "art"
+"org.gnome.Loupe" = "art"
+"preferences-desktop-locale" = "art"
+"org.gnome.Yelp" = "art"
+"org.gnome.DejaDup" = "art"
+"com.github.unrud.VideoDownloader" = "art"
+"org.gnome.Contacts" = "art"
+"yaru-squircle-snap-store_snap-store" = "art"
+"org.gnome.TextEditor" = "art"
+"org.gnome.SimpleScan" = "art"
+"nvidia-settings" = "art"
+"io.github.zaedus.spider" = "art"
+"org.gnome.Logs" = "art"
+"io.gitlab.metadatacleaner.metadatacleaner" = "art"
+"org.gnome.design.AppIconPreview" = "art"
+"org.gnome.Adwaita1.Demo" = "art"
+
+# Plates (rule agreed 10 Nov 2026, like Apple):
+#   cream (default) = colourful icons with no white outline
+#   grey  = system tools, greyscale or white-edged icons
+#   dark  = white symbols, media and pro tools
+
+
+
+
+[overrides."it.mijorus.gearlever"]  # Gear Lever
+style = "logo"
+plate_top = "#7C7B82"
+plate_bottom = "#46454C"
+
+
+[overrides."org.gnome.seahorse.Application"]  # Passwords and Keys
+style = "logo"
+plate_top = "#7C7B82"
+plate_bottom = "#46454C"
+
+
+[overrides."org.gnome.Settings"]  # Settings
+style = "logo"
+plate_top = "#7C7B82"
+plate_bottom = "#46454C"
+
+[overrides."system-software-update"]  # Software Updater
+style = "logo"
+plate_top = "#7C7B82"
+plate_bottom = "#46454C"
+
+[overrides."org.gnome.Sysprof"]  # Sysprof
+style = "logo"
+plate_top = "#7C7B82"
+plate_bottom = "#46454C"
+
+
+
+[overrides."org.gnome.Boxes"]  # Boxes
+style = "logo"
+plate_top = "#55545B"
+plate_bottom = "#2A292F"
+
+
+
+
+[overrides."io.github.rsmirke.Rappel"]  # Rappel
+style = "logo"
+plate_top = "#55545B"
+plate_bottom = "#2A292F"
+
+# Per-app choices
+[overrides."org.gnome.Snapshot"]  # Camera
+style = "logo"
+plate_top = "#FFFFFF"
+plate_bottom = "#EAEAEC"
+
+
+[overrides."org.gnome.DiskUtility"]  # Disks: Yaru icon on soft black, brighter rim (14 Nov 2026)
+style = "logo"
+plate_top = "#3C3C3F"
+plate_bottom = "#1A1A1C"
+rim_top_alpha = 0.45
+rim_bottom_alpha = 0.18
+
+# Round 6 (14 Nov 2026)
+[overrides."app.drey.Dialect"]  # Dialect
+style = "logo"
+plate_top = "#FFFFFF"
+plate_bottom = "#EAEAEC"
+
+[overrides."app.drey.EarTag"]  # Ear Tag
+style = "logo"
+plate_top = "#FFFFFF"
+plate_bottom = "#EAEAEC"
+
+[overrides."re.sonny.Eloquent"]  # Eloquent: light plate from its own colour
+style = "logo"
+plate_top = "#D6F5F2"
+plate_bottom = "#B5E3DE"
+
+[overrides."com.github.johnfactotum.Foliate"]  # Foliate: light plate from its own colour
+style = "logo"
+plate_top = "#D6F5F4"
+plate_bottom = "#B5E3E2"
+
+
+[overrides."org.gnome.Ptyxis"]  # Terminal: Yaru drawing, black instead of purple
+style = "art"
+art = "org.gnome.Ptyxis-black.svg"
+
+[overrides."org.gnome.Resources"]  # Resources: its dial's dark navy, a little greyed (14 Nov 2026)
+style = "logo"
+plate_top = "#453C5D"
+plate_bottom = "#211D2B"
+rim_top_alpha = 0.45
+rim_bottom_alpha = 0.18
+
+# Round 7 (14 Nov 2026): plates from each icon's own colours
+
+[overrides."yaru-squircle-desktop-security-center_desktop-security-center"]  # Security Center: light red from its shield
+style = "logo"
+plate_top = "#FBE6DF"
+plate_bottom = "#F4CCBE"
+
+[overrides."org.gnome.Decibels"]  # Audio Player: its own red-to-purple gradient
+style = "logo"
+plate_top = "#ED333B"
+plate_bottom = "#5D5AE3"
+rim_top_alpha = 0.45
+rim_bottom_alpha = 0.18
+
+[overrides."org.gnome.Chess"]  # Chess: on a wooden chessboard (14 Nov 2026)
+style = "logo"
+plate_checker = ["#D8B48A", "#A97D56"]
+checker_size = 4
+
+[overrides."org.gnome.gitlab.somas.Apostrophe"]  # Apostrophe: soft black plate, brighter rim (14 Nov 2026)
+style = "logo"
+plate_top = "#3C3C3F"
+plate_bottom = "#1A1A1C"
+rim_top_alpha = 0.45
+rim_bottom_alpha = 0.18

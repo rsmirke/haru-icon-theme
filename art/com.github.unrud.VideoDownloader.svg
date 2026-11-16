@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+<defs><radialGradient id="a" cx="261.687531" cy="-1100.566406" gradientTransform="matrix(0.279637 0 0 0.191671 14.08685 250.590637)" gradientUnits="userSpaceOnUse" r="225">
+        <stop offset="0" stop-color="#db202e"/>
+        <stop offset="1" stop-color="#e01b24"/>
+    </radialGradient>
+    <radialGradient id="b" cx="231.004364" cy="-188.457397" gradientTransform="matrix(0.711792 0.00758015 -0.00379303 0.356174 -134.550674 172.108429)" gradientUnits="userSpaceOnUse" r="225">
+        <stop offset="0" stop-color="#ffb648"/>
+        <stop offset="1" stop-color="#ff7800" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="c" cx="18.455704" cy="298.331299" gradientTransform="matrix(1.650163 0 0 1.10502 -11.999219 -219.132156)" gradientUnits="userSpaceOnUse" r="56">
+        <stop offset="0" stop-color="#c64600"/>
+        <stop offset="1" stop-color="#a51d2d"/>
+    </radialGradient>
+    </defs>
+<rect width="128" height="128" fill="#2B2A30"/>
+<path d="M0 0 H128 V128 H0 Z M16 20 h8 v8 h-8 z M104 20 h8 v8 h-8 z M16 36 h8 v8 h-8 z M104 36 h8 v8 h-8 z M16 52 h8 v8 h-8 z M104 52 h8 v8 h-8 z M16 68 h8 v8 h-8 z M104 68 h8 v8 h-8 z M16 84 h8 v8 h-8 z M104 84 h8 v8 h-8 z M16 100 h8 v8 h-8 z M104 100 h8 v8 h-8 z" fill="url(#a)" fill-rule="evenodd"/>
+<path d="M0 0 H128 V128 H0 Z M16 20 h8 v8 h-8 z M104 20 h8 v8 h-8 z M16 36 h8 v8 h-8 z M104 36 h8 v8 h-8 z M16 52 h8 v8 h-8 z M104 52 h8 v8 h-8 z M16 68 h8 v8 h-8 z M104 68 h8 v8 h-8 z M16 84 h8 v8 h-8 z M104 84 h8 v8 h-8 z M16 100 h8 v8 h-8 z M104 100 h8 v8 h-8 z" fill="url(#b)" fill-rule="evenodd"/>
+<path d=" M16 17 v3 h8 v-3 z M104 17 v3 h8 v-3 z M16 33 v3 h8 v-3 z M104 33 v3 h8 v-3 z M16 49 v3 h8 v-3 z M104 49 v3 h8 v-3 z M16 65 v3 h8 v-3 z M104 65 v3 h8 v-3 z M16 81 v3 h8 v-3 z M104 81 v3 h8 v-3 z M16 97 v3 h8 v-3 z M104 97 v3 h8 v-3 z" fill="url(#c)"/>
+<g transform="translate(0 -8)"><g fill="#ffffff">
+        <path d="m 52 68 h 24 v 16 h -24 z m 0 0"/>
+        <path d="m 64 102 l -22 -22 h 44 z m 0 0"/>
+        <path d="m 52 68 h 8 v -8 h -8 z m 0 0" fill-opacity="0.680048"/>
+        <path d="m 60 68 h 8 v -8 h -8 z m 0 0"/>
+        <path d="m 68 68 h 8 v -8 h -8 z m 0 0" fill-opacity="0.881557"/>
+        <path d="m 76 60 h -8 v -8 h 8 z m 0 0" fill-opacity="0.675122"/>
+        <path d="m 68 60 h -8 v -8 h 8 z m 0 0" fill-opacity="0.54493"/>
+        <path d="m 60 60 h -8 v -8 h 8 z m 0 0" fill-opacity="0.881557"/>
+        <path d="m 76 52 h -8 v -8 h 8 z m 0 0" fill-opacity="0.189116"/>
+        <path d="m 68 52 h -8 v -8 h 8 z m 0 0" fill-opacity="0.343781"/>
+        <path d="m 60 52 h -8 v -8 h 8 z m 0 0" fill-opacity="0.065324"/>
+    </g></g>
+</svg>

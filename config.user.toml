@@ -1,0 +1,22 @@
+# Your personal settings for the Yaru-Squircle icon theme.
+#
+# The theme's own look (plate size, colours, which apps fill the squircle...)
+# comes built in. Anything you put here wins over it. After editing, run:
+#     python3 ~/.local/share/yaru-squircle/yaru-squircle.py generate
+#
+# Examples (remove the leading "# " to use one):
+#
+# [shape]
+# plate = 0.875                  # plate size as a fraction of the icon
+#
+# skip = ["org.example.App"]     # leave these apps completely alone
+#
+# [overrides]
+# "org.gnome.Maps" = "logo"      # filled | logo | terminal | art
+#
+# [overrides."firefox_firefox"]  # key = icon name or launcher name
+# style = "logo"
+# plate_top = "#FFFFFF"
+# plate_bottom = "#EAEAEC"
+
+[overrides]

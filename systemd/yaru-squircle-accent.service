@@ -1,0 +1,12 @@
+[Unit]
+Description=Keep Yaru-Squircle when the accent colour changes
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=%h/.local/share/yaru-squircle/accent-watch.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target
