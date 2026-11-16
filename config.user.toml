@@ -1,8 +1,8 @@
-# Your personal settings for the Yaru-Squircle icon theme.
+# Your personal settings for the Haru icon theme.
 #
 # The theme's own look (plate size, colours, which apps fill the squircle...)
 # comes built in. Anything you put here wins over it. After editing, run:
-#     python3 ~/.local/share/yaru-squircle/yaru-squircle.py generate
+#     python3 ~/.local/share/haru/haru.py generate
 #
 # Examples (remove the leading "# " to use one):
 #

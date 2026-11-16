@@ -1,4 +1,4 @@
-# Yaru-Squircle
+# Haru
 
 **Yaru, in squircles.** An icon theme for Ubuntu and GNOME that keeps the
 Yaru icons you know and gives every application icon the same rounded-square
@@ -29,11 +29,11 @@ sudo apt install python3-gi gir1.2-gdkpixbuf-2.0 gir1.2-rsvg-2.0 python3-cairo p
 Then:
 
 ```bash
-git clone https://github.com/rsmirke/hako-icon-theme.git
+git clone https://github.com/rsmirke/haru-icon-theme.git
 ```
 
 ```bash
-cd hako-icon-theme && ./install.sh
+cd haru-icon-theme && ./install.sh
 ```
 
 The first run takes about a minute while it draws your icons. If an icon in
@@ -42,7 +42,7 @@ the dock or app grid still looks old afterwards, log out and back in once.
 ## Uninstall
 
 ```bash
-~/.local/share/yaru-squircle/uninstall.sh
+~/.local/share/haru/uninstall.sh
 ```
 
 This removes the theme and its background helpers, undoes every launcher
@@ -74,7 +74,7 @@ repository: they are drawn on your machine from the icons the apps install.
 
 ## Make it yours
 
-Your own settings live in `~/.config/yaru-squircle/config.toml` and win over
+Your own settings live in `~/.config/haru/config.toml` and win over
 the built-in look. For example:
 
 ```toml
@@ -90,10 +90,10 @@ plate_bottom = "#EAEAEC"
 Then rebuild:
 
 ```bash
-python3 ~/.local/share/yaru-squircle/yaru-squircle.py generate
+python3 ~/.local/share/haru/haru.py generate
 ```
 
-`~/.local/share/yaru-squircle/contact-sheet.png` shows all your icons at a
+`~/.local/share/haru/contact-sheet.png` shows all your icons at a
 glance, and `report.txt` lists how each one was made.
 
 ## For designers

@@ -63,7 +63,7 @@ ICONS = {
     "org.gnome.Contacts": dict(src="address-book-app", tile=PORTRAIT,
                                stretch={"rect4362", "rect4287", "rect4289", "rect4327", "rect1609"}),
     "org.gnome.Ptyxis": dict(src="terminal-app2", tile=LANDSCAPE, drop={"rect4158-78"}),
-    "yaru-squircle-snap-store_snap-store": dict(src="app-center", tile=PORTRAIT,
+    "haru-snap-store_snap-store": dict(src="app-center", tile=PORTRAIT,
                                                 fill_rect={"rect4158"},
                                                 drop={"rect4158-2", "rect4158-2-7"},
                                                 extra=("path4-2", "path4"),

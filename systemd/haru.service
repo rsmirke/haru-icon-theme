@@ -1,0 +1,9 @@
+[Unit]
+Description=Regenerate the Haru icon theme
+
+[Service]
+Type=oneshot
+# let package managers finish writing before we look
+ExecStartPre=/bin/sleep 8
+ExecStart=/usr/bin/python3 %h/.local/share/haru/haru.py generate
+Nice=10

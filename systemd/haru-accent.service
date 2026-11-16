@@ -1,10 +1,10 @@
 [Unit]
-Description=Keep Yaru-Squircle when the accent colour changes
+Description=Keep Haru when the accent colour changes
 After=graphical-session.target
 PartOf=graphical-session.target
 
 [Service]
-ExecStart=%h/.local/share/yaru-squircle/accent-watch.sh
+ExecStart=%h/.local/share/haru/accent-watch.sh
 Restart=on-failure
 RestartSec=5
 

@@ -1,6 +1,6 @@
-# yaru-squircle settings.
-# Your personal copy lives in ~/.config/yaru-squircle/config.toml (made by install.sh).
-# Edit that one, then run:  ~/.local/share/yaru-squircle/yaru-squircle.py generate
+# haru settings.
+# Your personal copy lives in ~/.config/haru/config.toml (made by install.sh).
+# Edit that one, then run:  ~/.local/share/haru/haru.py generate
 
 # Apps to leave completely alone (desktop id without .desktop, or icon name).
 skip = []
@@ -50,7 +50,7 @@ terminal_bottom = "#3A1A38"
 "org.gnome.DejaDup" = "art"
 "com.github.unrud.VideoDownloader" = "art"
 "org.gnome.Contacts" = "art"
-"yaru-squircle-snap-store_snap-store" = "art"
+"haru-snap-store_snap-store" = "art"
 "org.gnome.TextEditor" = "art"
 "org.gnome.SimpleScan" = "art"
 "nvidia-settings" = "art"
@@ -159,7 +159,7 @@ rim_bottom_alpha = 0.18
 
 # Round 7 (14 Nov 2026): plates from each icon's own colours
 
-[overrides."yaru-squircle-desktop-security-center_desktop-security-center"]  # Security Center: light red from its shield
+[overrides."haru-desktop-security-center_desktop-security-center"]  # Security Center: light red from its shield
 style = "logo"
 plate_top = "#FBE6DF"
 plate_bottom = "#F4CCBE"

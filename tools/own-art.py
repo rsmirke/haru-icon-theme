@@ -24,7 +24,7 @@ ma = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(ma)
 SVG, SQ, render_bbox = ma.SVG, ma.SQ, ma.render_bbox
 
-MANIFEST = Path.home() / ".local/share/yaru-squircle/manifest.json"
+MANIFEST = Path.home() / ".local/share/haru/manifest.json"
 NONDRAW = {"defs", "metadata", "namedview", "title", "linearGradient", "radialGradient", "mask",
            "clipPath", "filter", "style"}
 

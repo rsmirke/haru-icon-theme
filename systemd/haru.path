@@ -1,5 +1,5 @@
 [Unit]
-Description=Watch for installed or removed apps (yaru-squircle)
+Description=Watch for installed or removed apps (haru)
 
 [Path]
 PathChanged=/usr/share/applications
