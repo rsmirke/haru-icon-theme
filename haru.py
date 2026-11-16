@@ -62,7 +62,7 @@ TERMINAL_NAMES = {"utilities-terminal", "org.gnome.Ptyxis", "org.gnome.Terminal"
 
 DEFAULTS = {
     "theme": {"base": "auto"},
-    "shape": {"plate": 0.875, "exponent": 5.0, "filled_scale": 1.05, "logo_size": 0.72,
+    "shape": {"plate": 0.875, "exponent": 5.0, "filled_scale": 1.05, "filled_edge": 0.05, "logo_size": 0.72,
               "rim_width": 1.0, "rim_top_alpha": 0.34, "rim_bottom_alpha": 0.05,
               "shadow_opacity": 0.28},
     "colors": {"plate_top": "#FCF9F2", "plate_bottom": "#EEE8DC",
@@ -445,6 +445,33 @@ def terminal_glyph(size, plate):
     return pil_from_cairo(surf)
 
 
+def extend_edges(img, box):
+    """Keep img inside box and repeat box's outermost pixels outward over the rest.
+
+    Used for "filled" icons: the source tile's own rim, bottom shading and rounded
+    corners sit in that outer band, and would otherwise show just inside the squircle.
+    Nothing is scaled; the art inside the box stays exactly where and how it was."""
+    x0, y0, x1, y1 = box
+    w, h = img.size
+    if not (0 < x0 < x1 < w and 0 < y0 < y1 < h):
+        return img
+    out = Image.new("RGBA", (w, h))
+    out.paste(img.crop(box), (x0, y0))
+    iw, ih = x1 - x0, y1 - y0
+
+    def strip(b, size):  # BILINEAR: NEAREST resizes are broken in python3-pil 12.3.0-1ubuntu2
+        return img.crop(b).resize(size, Image.BILINEAR)
+
+    out.paste(strip((x0, y0, x1, y0 + 1), (iw, y0)), (x0, 0))
+    out.paste(strip((x0, y1 - 1, x1, y1), (iw, h - y1)), (x0, y1))
+    out.paste(strip((x0, y0, x0 + 1, y1), (x0, ih)), (0, y0))
+    out.paste(strip((x1 - 1, y0, x1, y1), (w - x1, ih)), (x1, y0))
+    for px, py, bx, by, bw, bh in ((x0, y0, 0, 0, x0, y0), (x1 - 1, y0, x1, 0, w - x1, y0),
+                                   (x0, y1 - 1, 0, y1, x0, h - y1), (x1 - 1, y1 - 1, x1, y1, w - x1, h - y1)):
+        out.paste(Image.new("RGBA", (bw, bh), img.getpixel((px, py))), (bx, by))
+    return out
+
+
 def render_master(src, info, style, cfg, opts):
     """Return the un-rimmed master image (MASTER x MASTER) for one icon."""
     sh = cfg["shape"]
@@ -468,6 +495,10 @@ def render_master(src, info, style, cfg, opts):
         side = max(sbb[2] - sbb[0], sbb[3] - sbb[1])
         k = plate * float(opts.get("filled_scale", sh["filled_scale"])) / side
         img = src.at_scale(k)
+        edge = float(opts.get("filled_edge", sh.get("filled_edge", 0)))
+        if edge > 0:
+            d = side * edge
+            img = extend_edges(img, tuple(round(v * k) for v in (sbb[0] + d, sbb[1] + d, sbb[2] - d, sbb[3] - d)))
         cx, cy = (sbb[0] + sbb[2]) / 2 * k, (sbb[1] + sbb[3]) / 2 * k
         bg = tuple(opts["background"]) if "background" in opts else info["edge"]
         if isinstance(bg, str):

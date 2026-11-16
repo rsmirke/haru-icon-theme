@@ -13,6 +13,8 @@ base = "auto"
 plate = 0.875           # plate side as a fraction of the icon canvas (56 px in a 64 px cell)
 exponent = 5.0          # superellipse exponent n (4 = rounder, 6 = squarer)
 filled_scale = 1.05     # "filled" icons: square art is scaled to 105% of the plate, then clipped
+filled_edge = 0.05      # "filled" icons: the outer 5% of the source tile (its own rim, shading, corners)
+                        #   is replaced by the colours just inside it, carried out to the edge (0 = off)
 logo_size = 0.72        # "logo" icons: longest side of the logo as a fraction of the plate
 rim_width = 1.0         # hairline rim width in pixels at 128 px and below (scales up above that)
 rim_top_alpha = 0.34    # rim: white at 34% at the top ...
@@ -183,3 +185,6 @@ plate_top = "#3C3C3F"
 plate_bottom = "#1A1A1C"
 rim_top_alpha = 0.45
 rim_bottom_alpha = 0.18
+
+[overrides."org.gnome.Characters"]  # Characters: its Arabic letter touches the tile edge, so keep the edge as drawn
+filled_edge = 0
