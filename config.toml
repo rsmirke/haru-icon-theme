@@ -69,10 +69,10 @@ terminal_bottom = "#3A1A38"
 
 
 
-[overrides."it.mijorus.gearlever"]  # Gear Lever
+[overrides."it.mijorus.gearlever"]  # Gear Lever: white plate (16 Nov 2026)
 style = "logo"
-plate_top = "#7C7B82"
-plate_bottom = "#46454C"
+plate_top = "#FFFFFF"
+plate_bottom = "#F0F0F0"
 
 
 [overrides."org.gnome.seahorse.Application"]  # Passwords and Keys
