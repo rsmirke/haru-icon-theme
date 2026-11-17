@@ -45,6 +45,9 @@ ICONS = {
     "com.github.johnfactotum.Foliate": dict(tile=(8, 21, 120, 110), stretch=set(range(0, 17)), scale=0.9,
                                             offset=(0, 6)),
     # the gauge's light housing becomes the squircle; dial, needle and buttons unchanged
+    # the card's grey gradient and shine fill the squircle (its black outline is dropped); stars unchanged.
+    # Brand icon: built on your own machine only, into ~/.config/haru/art (see config.user.toml)
+    "net.ankiweb.Anki": dict(tile=(6, 2.5, 27, 30.5), stretch={1, 5}, drop={0}),
     "org.gnome.Resources": dict(tile=(12, 20, 116, 124), fill={1}, drop={0}, scale=0.8, offset=(0, -1)),
 }
 

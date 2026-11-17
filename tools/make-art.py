@@ -112,8 +112,14 @@ ICONS = {
     "org.gnome.Rhythmbox3": dict(src="rhythmbox", tile=PORTRAIT),
     "org.gnome.Mahjongg": dict(src="gnome-mahjongg", tile=PORTRAIT, drop={"path931", "path931-8", "rect4158-6"},
                                stretch={"path932"}),
-    "org.gnome.Shotwell": dict(src="shotwell", tile=(48, 52, 256, 260)),
+    # the photo's corners follow the squircle's curve (inner = same superellipse, fitted to the photo)
+    "org.gnome.Shotwell": dict(src="shotwell", tile=(48, 52, 256, 260),
+                               inner=dict(box=(52, 52, 252, 232), frame={"rect4158", "rect4158-3"})),
     "com.transmissionbt.Transmission": dict(src="transmission", tile=(48, 52, 256, 260), stretch={"rect1646"}),
+    "org.gnome.Evolution": dict(src="mail-app", tile=LANDSCAPE,
+                                front={"path996-5", "path17654", "path18127", "path5314", "path17771",
+                                       "path17773", "path18129"}),
+    "org.gnome.Builder": dict(src="builder-app", tile=(48, 52, 256, 260), extra=("path169-2-7", "g176")),
     "org.gnome.DejaDup@yaru-door": dict(src="backups-app", tile=PORTRAIT),
 }
 
@@ -170,7 +176,7 @@ def compose(key, cfg):
     tcx, tcy = (x0 + x1) / 2, (y0 + y1) / 2
     ux, uy = 64 - s * tcx, 64 - s * tcy
 
-    stretch, uniform, places, corners, fills, underlays = [], [], [], [], [], []
+    stretch, uniform, places, corners, fills, underlays, fronts = [], [], [], [], [], [], []
     for layer in icon:
         name = layer.attrib.get(INK, "")
         if name in ("Baseplate", "Borders", "Highlights", "Shadow", "Optional outline for white icons"):
@@ -178,6 +184,9 @@ def compose(key, cfg):
         for e in list(layer):
             eid = e.attrib.get("id", "")
             if eid in cfg.get("drop", set()):
+                continue
+            if eid in cfg.get("front", set()):    # stretched like the background, drawn over the pictogram
+                fronts.append(e)
                 continue
             if cfg.get("underlay") and eid == cfg["underlay"][0]:
                 underlays.append(e)
@@ -224,7 +233,20 @@ def compose(key, cfg):
                                               "height": str(by1 - by0)})
         ug0 = ET.SubElement(g, f"{{{SVG}}}g", {"clip-path": "url(#under)"})
         ug0.append(copy.deepcopy(e))
+    inner = cfg.get("inner")
+    if inner:
+        # a picture inside the tile (Shotwell's photo) gets the squircle's own rounded corners
+        bx0, by0, bx1, by1 = inner["box"]
+        icp = ET.SubElement(d, f"{{{SVG}}}clipPath", {"id": "inner"})
+        ET.SubElement(icp, f"{{{SVG}}}path", {"d": squircle_path(r=1, c=0, steps=720), "transform":
+                      f"matrix({(bx1 - bx0) / 2} 0 0 {(by1 - by0) / 2} {(bx0 + bx1) / 2} {(by0 + by1) / 2})"})
+    ig = None
     for e in stretch:
+        if inner and e.attrib.get("id") not in inner["frame"]:
+            if ig is None:
+                ig = ET.SubElement(g, f"{{{SVG}}}g", {"clip-path": "url(#inner)"})
+            ig.append(copy.deepcopy(e))
+            continue
         g.append(copy.deepcopy(e))
     # round shapes (circles, arcs) become rectangles reaching the tile edge,
     # keeping their exact fill, so the colour field fills the squircle
@@ -303,6 +325,11 @@ def compose(key, cfg):
             uniform = [e for e in uniform if e not in group]
     for e in uniform:
         ug.append(copy.deepcopy(e))
+    if fronts:   # e.g. an envelope's front, which the letter tucks into
+        fc = ET.SubElement(out, f"{{{SVG}}}g", {"clip-path": "url(#tc)"})
+        fg = ET.SubElement(fc, f"{{{SVG}}}g", {"transform": f"matrix({sx} 0 0 {sy} {tx} {ty})"})
+        for e in fronts:
+            fg.append(copy.deepcopy(e))
     path = OUT / f"{key}.svg"
     path.write_bytes(ET.tostring(out))
     return path
