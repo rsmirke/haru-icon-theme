@@ -50,6 +50,7 @@ ICON_PREFIX = "haru-"
 MASTER = 1024
 SIZES = [(16, 1), (16, 2), (24, 1), (24, 2), (32, 1), (32, 2), (48, 1), (48, 2),
          (64, 1), (64, 2), (128, 1), (128, 2), (256, 1), (256, 2)]
+__version__ = "1.0.0"
 RENDER_VERSION = "5"   # bump to force a full re-render
 
 TERMINAL_NAMES = {"utilities-terminal", "org.gnome.Ptyxis", "org.gnome.Terminal",
@@ -1036,6 +1037,7 @@ def cmd_sheet(args):
 
 def main():
     ap = argparse.ArgumentParser(prog="haru")
+    ap.add_argument("--version", action="version", version=f"haru {__version__}")
     sub = ap.add_subparsers(dest="cmd", required=True)
     g = sub.add_parser("generate")
     g.add_argument("--force", action="store_true", help="re-render every icon")

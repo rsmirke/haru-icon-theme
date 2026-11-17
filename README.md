@@ -32,7 +32,8 @@ On Ubuntu, the few required packages are usually already there:
 sudo apt install python3-gi gir1.2-gdkpixbuf-2.0 gir1.2-rsvg-2.0 python3-cairo python3-pil yaru-theme-icon
 ```
 
-Then:
+Then download the [latest release](https://github.com/rsmirke/haru-icon-theme/releases/latest)
+and unpack it, or clone the repository:
 
 ```bash
 git clone https://github.com/rsmirke/haru-icon-theme.git
@@ -64,6 +65,8 @@ change it made and puts back the icon theme you had before.
      app artwork so its background fills the squircle;
    - **filled:** icons that are already a full square tile are clipped to the
      squircle;
+   - **disc:** round icons (Steam, Discord, Zoom, OBS…) have their disc
+     carried out so it fills the squircle;
    - **logo:** everything else sits whole on a plate: warm cream by default,
      or a colour that suits the icon (grey, dark, white, a light tint of the
      icon's own colour, even a wooden chessboard for Chess).
@@ -108,6 +111,13 @@ glance, and `report.txt` lists how each one was made.
 - `art/`: finished squircle drawings.
 - `tools/make-art.py`: builds drawings from Yaru's original sources.
 - `tools/own-art.py`: the same for apps that are not part of Yaru.
+- `tools/libreoffice-art.py`: the LibreOffice squircles.
+- `tools/showcase/make.py`: redraws the images at the top of this page.
+- `docs/validated-icons.md`: every approved icon and its look.
+
+## Changes
+
+See [CHANGELOG.md](CHANGELOG.md).
 
 ## Credits and licences
 
