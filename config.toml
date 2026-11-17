@@ -79,6 +79,15 @@ terminal_bottom = "#3A1A38"
 "org.gnome.Mahjongg" = "art"
 "org.gnome.Shotwell" = "art"
 "com.transmissionbt.Transmission" = "art"    # Yaru's Transmission drawing
+# Final as they are (17 Nov 2026): pinned so they keep this look
+"org.gnome.Nautilus" = "logo"                # Files
+"org.gnome.Calculator" = "filled"
+"org.gnome.Epiphany" = "logo"                # Web
+"org.gnome.clocks" = "logo"                  # Clocks
+"org.gnome.baobab" = "logo"                  # Disk Usage Analyzer
+"org.gnome.font-viewer" = "filled"           # Fonts
+"com.mattjakeman.ExtensionManager" = "filled"
+"preferences-system-network" = "logo"        # Advanced Network Configuration
 
 # Plates (rule agreed 10 Nov 2026, like Apple):
 #   cream (default) = colourful icons with no white outline
@@ -220,5 +229,6 @@ plate_bottom = "#1A1A1C"
 rim_top_alpha = 0.45
 rim_bottom_alpha = 0.18
 
-[overrides."org.gnome.Characters"]  # Characters: its Arabic letter touches the tile edge, so keep the edge as drawn
+[overrides."org.gnome.Characters"]  # Characters (final, 17 Nov 2026): its Arabic letter touches the tile edge, so keep the edge as drawn
+style = "filled"
 filled_edge = 0
