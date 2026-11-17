@@ -152,6 +152,39 @@ shadow_opacity = 0
 rim_top_alpha = 0.45
 rim_bottom_alpha = 0.18
 
+# LibreOffice from .deb packages (libreoffice-* icon names): same drawings as the Flatpak/snap names (17 Nov 2026)
+[overrides."libreoffice-startcenter"]
+style = "art"
+art = "org.libreoffice.LibreOffice.startcenter.svg"
+
+[overrides."libreoffice-writer"]
+style = "art"
+art = "org.libreoffice.LibreOffice.writer.svg"
+
+[overrides."libreoffice-calc"]
+style = "art"
+art = "org.libreoffice.LibreOffice.calc.svg"
+
+[overrides."libreoffice-impress"]
+style = "art"
+art = "org.libreoffice.LibreOffice.impress.svg"
+
+[overrides."libreoffice-draw"]
+style = "art"
+art = "org.libreoffice.LibreOffice.draw.svg"
+
+[overrides."libreoffice-base"]
+style = "art"
+art = "org.libreoffice.LibreOffice.base.svg"
+
+[overrides."libreoffice-math"]
+style = "art"
+art = "org.libreoffice.LibreOffice.math.svg"
+
+[overrides."libreoffice-main"]
+style = "art"
+art = "org.libreoffice.LibreOffice.startcenter.svg"
+
 [overrides."haru-obs-studio_obs-studio"]  # OBS Studio (snap): black disc fills the squircle, its thin white ring dropped (17 Nov 2026)
 style = "disc"
 disc_inset = 0.88

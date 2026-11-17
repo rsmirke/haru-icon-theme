@@ -9,7 +9,7 @@ drawings, or Haru's automatic rules), so you can uninstall any of these apps:
 Haru removes its icon, and if you install the app again later it draws the
 same icon again. Anki's drawing is kept on this laptop in `~/.config/haru/art`.
 
-**Validated: 99 icons**
+**Validated: 106 icons**
 
 | App | Look | Icon name |
 |---|---|---|
@@ -62,12 +62,19 @@ same icon again. Anki's drawing is kept on this laptop in `~/.config/haru/art`.
 | Inkscape | on the cream plate | `org.inkscape.Inkscape` |
 | Language Support | squircle drawing from Yaru | `preferences-desktop-locale` |
 | LibreOffice | squircle drawing from Yaru | `org.libreoffice.LibreOffice.startcenter` |
+| LibreOffice (.deb) | squircle drawing from Yaru | `libreoffice-startcenter` |
 | LibreOffice Base | squircle drawing from Yaru | `org.libreoffice.LibreOffice.base` |
+| LibreOffice Base (.deb) | squircle drawing from Yaru | `libreoffice-base` |
 | LibreOffice Calc | squircle drawing from Yaru | `org.libreoffice.LibreOffice.calc` |
+| LibreOffice Calc (.deb) | squircle drawing from Yaru | `libreoffice-calc` |
 | LibreOffice Draw | squircle drawing from Yaru | `org.libreoffice.LibreOffice.draw` |
+| LibreOffice Draw (.deb) | squircle drawing from Yaru | `libreoffice-draw` |
 | LibreOffice Impress | squircle drawing from Yaru | `org.libreoffice.LibreOffice.impress` |
+| LibreOffice Impress (.deb) | squircle drawing from Yaru | `libreoffice-impress` |
 | LibreOffice Math | squircle drawing from Yaru | `org.libreoffice.LibreOffice.math` |
+| LibreOffice Math (.deb) | squircle drawing from Yaru | `libreoffice-math` |
 | LibreOffice Writer | squircle drawing from Yaru | `org.libreoffice.LibreOffice.writer` |
+| LibreOffice Writer (.deb) | squircle drawing from Yaru | `libreoffice-writer` |
 | Logs | squircle drawing from Yaru | `org.gnome.Logs` |
 | Mahjongg | squircle drawing from Yaru | `org.gnome.Mahjongg` |
 | Maps | squircle drawing from Yaru | `org.gnome.Maps` |
