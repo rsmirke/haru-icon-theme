@@ -1,17 +1,19 @@
 # Validated icons
 
-Icons approved so far (17 November 2026). The look of every icon below
-is kept by the theme (in `config.toml`, the `art/` drawings, or Haru's
-automatic rules), so you can uninstall any of these apps: if you install it
-again later, Haru draws the same icon again.
+Icons approved so far (17 November 2026). Every icon installed is validated.
 
-**Validated: 94 icons**
+The look of each icon is kept by the theme (`config.toml`, the `art/`
+drawings, or Haru's automatic rules), so you can uninstall any of these apps:
+Haru removes its icon, and if you install the app again later it draws the
+same icon again. Anki's drawing is kept on this laptop in `~/.config/haru/art`.
+
+**Validated: 99 icons**
 
 | App | Look | Icon name |
 |---|---|---|
 | Advanced Network Configuration | on the cream plate | `preferences-system-network` |
 | Adwaita Demo | squircle drawing from the app's own icon | `org.gnome.Adwaita1.Demo` |
-| AisleRiot Solitaire | on the cream plate | `org.gnome.Aisleriot` |
+| AisleRiot Solitaire | on a card-table green plate | `org.gnome.Aisleriot` |
 | Anki | squircle drawing from the app's own icon (built on this laptop only) | `net.ankiweb.Anki` |
 | Apostrophe | on a soft black plate | `org.gnome.gitlab.somas.Apostrophe` |
 | App Center | squircle drawing from Yaru | `haru-snap-store_snap-store` |
@@ -32,6 +34,7 @@ again later, Haru draws the same icon again.
 | Contacts | squircle drawing from Yaru | `org.gnome.Contacts` |
 | dconf Editor | fills the squircle | `ca.desrt.dconf-editor` |
 | Dialect | on a white plate | `app.drey.Dialect` |
+| Discord | its round shape fills the squircle | `haru-discord_discord` |
 | Disk Usage Analyzer | on the cream plate | `org.gnome.baobab` |
 | Disks | on a soft black plate | `org.gnome.DiskUtility` |
 | Document Scanner | squircle drawing from Yaru | `org.gnome.SimpleScan` |
@@ -72,6 +75,7 @@ again later, Haru draws the same icon again.
 | Mudita Center | fills the squircle | `haru-mudita_center` |
 | Music | fills the squircle | `org.gnome.Music` |
 | NVIDIA X Server Settings | squircle drawing from Yaru | `nvidia-settings` |
+| OBS Studio | its round shape fills the squircle | `haru-obs-studio_obs-studio` |
 | Obsidian | fills the squircle | `haru-obsidian_obsidian` |
 | Passwords and Keys | on a grey plate | `org.gnome.seahorse.Application` |
 | Proton Calendar | fills the squircle | `haru-io.github.zaedus.spider.lojouofrzn` |
@@ -85,11 +89,12 @@ again later, Haru draws the same icon again.
 | Rhythmbox | squircle drawing from Yaru | `org.gnome.Rhythmbox3` |
 | Security Center | on a plate in its own colour | `haru-desktop-security-center_desktop-security-center` |
 | Settings | on a plate in its own colour | `org.gnome.Settings` |
+| Shotwell | squircle drawing from Yaru | `org.gnome.Shotwell` |
 | Signal | its colour fills the squircle | `org.signal.Signal` |
 | Software Updater | on a plate in its own colour | `system-software-update` |
 | Sound Recorder | squircle drawing from Yaru | `org.gnome.SoundRecorder` |
 | Spider | squircle drawing from the app's own icon | `io.github.zaedus.spider` |
-| Steam | its disc fills the squircle | `com.valvesoftware.Steam` |
+| Steam | its round shape fills the squircle | `com.valvesoftware.Steam` |
 | Sudoku | fills the squircle | `io.github.sepehr_rs.Sudoku` |
 | Sudoku | fills the squircle | `org.gnome.Sudoku` |
 | Sysprof | on a grey plate | `org.gnome.Sysprof` |
@@ -100,17 +105,8 @@ again later, Haru draws the same icon again.
 | Video Player | squircle drawing from Yaru | `org.gnome.Showtime` |
 | Videos | squircle drawing from Yaru | `org.gnome.Totem` |
 | Vim | on the cream plate | `gvim` |
+| Visual Studio Code | on a black plate | `haru-code_code` |
 | Weather | fills the squircle | `org.gnome.Weather` |
 | Web | on the cream plate | `org.gnome.Epiphany` |
 | Zen Browser | fills the squircle | `app.zen_browser.zen` |
-
-## Still being worked on
-
-- Shotwell: new look being chosen
-
-## Installed after the last review (not reviewed yet)
-
-- Discord (on the cream plate)
-- OBS Studio (on the cream plate)
-- Visual Studio Code (on the cream plate)
-- Zoom (on the cream plate)
+| Zoom | its round shape fills the squircle | `us.zoom.Zoom` |

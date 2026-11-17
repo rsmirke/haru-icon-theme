@@ -504,6 +504,9 @@ def render_master(src, info, style, cfg, opts):
         sp, dp = disc.load(), canvas.load()
         c = MASTER / 2
         r = plate / 2 * float(opts.get("disc_inset", 0.97))
+        # disc_fill: one flat colour outside the disc instead of its edge colours (e.g. OBS,
+        # whose disc has a white ring that would otherwise be carried outwards)
+        fill = hex_rgb(opts["disc_fill"]) + (255,) if "disc_fill" in opts else None
         for y in range(MASTER):
             dy = y + 0.5 - c
             for x in range(MASTER):
@@ -512,6 +515,9 @@ def render_master(src, info, style, cfg, opts):
                 if d <= r:
                     dp[x, y] = sp[x, y][:3] + (255,)
                 else:
+                    if fill:
+                        dp[x, y] = fill
+                        continue
                     f = r / d
                     dp[x, y] = sp[int(c + dx * f), int(c + dy * f)][:3] + (255,)
         return canvas

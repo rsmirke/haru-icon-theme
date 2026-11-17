@@ -38,6 +38,7 @@ terminal_bottom = "#3A1A38"
 #               background = "#FFFFFF"            (filled icons: colour behind clipped corners)
 #               plate_top = "#7C7B82"             (logo icons: plate colour, top ...)
 #               plate_bottom = "#46454C"          (... and bottom)
+#               disc_inset = 0.88 / disc_fill = "#000000"  (disc icons: where the disc ends / one colour outside it)
 #               shadow_opacity = 0                (logo icons: no contact shadow)
 #               rim_top_alpha = 0.45              (this icon's rim brightness, top / bottom)
 #               rim_bottom_alpha = 0.18
@@ -93,6 +94,8 @@ terminal_bottom = "#3A1A38"
 "org.gnome.Evolution" = "art"                # Yaru's mail drawing, envelope fills the squircle
 "org.gnome.Builder" = "art"
 "com.valvesoftware.Steam" = "disc"           # Steam: its blue disc fills the squircle
+"us.zoom.Zoom" = "disc"                      # Zoom: its blue shape fills the squircle
+"haru-discord_discord" = "disc"              # Discord (snap): its blue disc fills the squircle
 
 # Plates (rule agreed 10 Nov 2026, like Apple):
 #   cream (default) = colourful icons with no white outline
@@ -116,6 +119,25 @@ plate_top = "#3A44FD"
 plate_bottom = "#202BFD"
 logo_size = 1.0
 shadow_opacity = 0
+rim_top_alpha = 0.45
+rim_bottom_alpha = 0.18
+
+[overrides."haru-obs-studio_obs-studio"]  # OBS Studio (snap): black disc fills the squircle, its thin white ring dropped (17 Nov 2026)
+style = "disc"
+disc_inset = 0.88
+disc_fill = "#000000"
+
+[overrides."haru-code_code"]  # VS Code (snap): dark plate (17 Nov 2026)
+style = "logo"
+plate_top = "#2A2A2D"
+plate_bottom = "#0A0A0B"
+rim_top_alpha = 0.45
+rim_bottom_alpha = 0.18
+
+[overrides."org.gnome.Aisleriot"]  # AisleRiot: card-table green plate (17 Nov 2026)
+style = "logo"
+plate_top = "#3A8A4C"
+plate_bottom = "#1D5A2C"
 rim_top_alpha = 0.45
 rim_bottom_alpha = 0.18
 
