@@ -43,7 +43,9 @@ def squircle_path(n=5.0, r=56.0, c=64.0, steps=96):
     return "M" + " L".join(f"{x:.5f} {y:.5f}" for x, y in pts) + "Z"
 
 
-SQ = squircle_path()
+# a little larger than the plate (r = 56): the theme's own squircle mask then draws the edge,
+# so art icons get exactly the same outline as every other icon
+SQ = squircle_path(r=57.0, steps=720)
 
 
 def fetch(name, srcdir="apps"):
@@ -101,6 +103,17 @@ ICONS = {
                          place={"path18274", "path18272", "path18270", "path13702", "path13698", "path13696",
                                 "path13694", "path13692", "path13690", "path13688", "path13686", "path13684",
                                 "path13682", "path13680"}),
+    # Round 3 (17 Nov 2026)
+    "org.gnome.Totem": dict(src="mediaplayer-app", tile=LANDSCAPE,
+                            place={"path18274", "path18272", "path18270", "path13702", "path13698", "path13696",
+                                   "path13694", "path13692", "path13690", "path13688", "path13686", "path13684",
+                                   "path13682", "path13680"}),
+    "org.gnome.SoundRecorder": dict(src="org.gnome.SoundRecorder", tile=LANDSCAPE),
+    "org.gnome.Rhythmbox3": dict(src="rhythmbox", tile=PORTRAIT),
+    "org.gnome.Mahjongg": dict(src="gnome-mahjongg", tile=PORTRAIT, drop={"path931", "path931-8", "rect4158-6"},
+                               stretch={"path932"}),
+    "org.gnome.Shotwell": dict(src="shotwell", tile=(48, 52, 256, 260)),
+    "com.transmissionbt.Transmission": dict(src="transmission", tile=(48, 52, 256, 260), stretch={"rect1646"}),
     "org.gnome.DejaDup@yaru-door": dict(src="backups-app", tile=PORTRAIT),
 }
 

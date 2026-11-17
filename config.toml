@@ -72,6 +72,13 @@ terminal_bottom = "#3A1A38"
 "org.libreoffice.LibreOffice.draw" = "art"
 "org.libreoffice.LibreOffice.base" = "art"
 "org.libreoffice.LibreOffice.math" = "art"
+# Round 8 (17 Nov 2026): Yaru's drawings filling the squircle (tools/make-art.py)
+"org.gnome.Totem" = "art"                    # Videos
+"org.gnome.SoundRecorder" = "art"
+"org.gnome.Rhythmbox3" = "art"
+"org.gnome.Mahjongg" = "art"
+"org.gnome.Shotwell" = "art"
+"com.transmissionbt.Transmission" = "art"    # Yaru's Transmission drawing
 
 # Plates (rule agreed 10 Nov 2026, like Apple):
 #   cream (default) = colourful icons with no white outline
@@ -83,6 +90,7 @@ terminal_bottom = "#3A1A38"
 
 [overrides."com.github.tchx84.Flatseal"]  # Flatseal: black plate (17 Nov 2026)
 style = "logo"
+logo_size = 0.64        # the solid tape roll looks bigger than other logos at 0.72
 plate_top = "#2A2A2D"
 plate_bottom = "#0A0A0B"
 rim_top_alpha = 0.45
