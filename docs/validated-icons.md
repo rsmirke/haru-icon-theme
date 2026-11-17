@@ -1,6 +1,8 @@
 # Validated icons
 
-Icons approved so far (17 November 2026). Every icon installed is validated.
+Icons approved so far (17 November 2026). Every icon installed is validated and
+frozen: its look is pinned in `config.toml`, so later changes to the automatic
+rules cannot change it.
 
 The look of each icon is kept by the theme (`config.toml`, the `art/`
 drawings, or Haru's automatic rules), so you can uninstall any of these apps:

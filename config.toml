@@ -96,6 +96,36 @@ terminal_bottom = "#3A1A38"
 "com.valvesoftware.Steam" = "disc"           # Steam: its blue disc fills the squircle
 "us.zoom.Zoom" = "disc"                      # Zoom: its blue shape fills the squircle
 "haru-discord_discord" = "disc"              # Discord (snap): its blue disc fills the squircle
+# Frozen (17 Nov 2026): every validated icon has its look pinned, so later changes to the
+# automatic rules can never change it. See docs/validated-icons.md.
+"app.zen_browser.zen" = "filled"                         # Zen Browser
+"ca.desrt.dconf-editor" = "filled"                       # dconf Editor
+"claude-desktop" = "filled"                              # Claude
+"com.google.Chrome" = "logo"                             # Google Chrome
+"com.usebottles.bottles" = "logo"                        # Bottles
+"gvim" = "logo"                                          # Vim
+"haru-eclipse_eclipse" = "logo"                          # Eclipse
+"haru-firefox_firefox" = "logo"                          # Firefox
+"haru-firmware-updater_firmware-updater" = "filled"      # Firmware Updater
+"haru-io.github.zaedus.spider.lojouofrzn" = "filled"     # Proton Calendar (web app)
+"haru-io.github.zaedus.spider.nwevjqyllu" = "filled"     # Proton Drive (web app)
+"haru-mudita_center" = "filled"                          # Mudita Center
+"haru-obsidian_obsidian" = "filled"                      # Obsidian
+"haru-proton-mail_proton-mail" = "filled"                # Proton Mail
+"haru-proton-pass_proton-pass" = "filled"                # Proton Pass
+"haru-proton-vpn_proton-vpn" = "logo"                    # Proton VPN
+"haru-rappel_rappel" = "logo"                            # Rappel (snap)
+"io.github.amit9838.mousam" = "filled"                   # Mousam
+"io.github.kolunmi.Bazaar" = "logo"                      # Bazaar
+"io.github.sepehr_rs.Sudoku" = "filled"                  # Sudoku
+"io.github.shiftey.Desktop" = "filled"                   # GitHub Desktop
+"org.gimp.GIMP" = "logo"                                 # GIMP
+"org.gnome.Calendar" = "filled"                          # Calendar
+"org.gnome.Mines" = "filled"                             # Mines
+"org.gnome.Music" = "filled"                             # Music
+"org.gnome.Sudoku" = "filled"                            # Sudoku
+"org.gnome.Weather" = "filled"                           # Weather
+"org.inkscape.Inkscape" = "logo"                         # Inkscape
 
 # Plates (rule agreed 10 Nov 2026, like Apple):
 #   cream (default) = colourful icons with no white outline
