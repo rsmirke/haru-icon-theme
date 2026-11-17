@@ -183,6 +183,11 @@ def compose(key, cfg):
             continue
         for e in list(layer):
             eid = e.attrib.get("id", "")
+            if eid in cfg.get("grow", {}):        # a colour field carried out to a given box (same fill, same place in the stack)
+                gx0, gy0, gx1, gy1 = cfg["grow"][eid]
+                keep = {k: v for k, v in e.attrib.items() if k in ("id", "style", "fill", "opacity", "fill-opacity")}
+                e = ET.Element(f"{{{SVG}}}rect", dict(keep, x=str(gx0), y=str(gy0), width=str(gx1 - gx0),
+                                                       height=str(gy1 - gy0)))
             if eid in cfg.get("drop", set()):
                 continue
             if eid in cfg.get("front", set()):    # stretched like the background, drawn over the pictogram

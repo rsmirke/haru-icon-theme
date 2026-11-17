@@ -50,7 +50,7 @@ ICON_PREFIX = "haru-"
 MASTER = 1024
 SIZES = [(16, 1), (16, 2), (24, 1), (24, 2), (32, 1), (32, 2), (48, 1), (48, 2),
          (64, 1), (64, 2), (128, 1), (128, 2), (256, 1), (256, 2)]
-RENDER_VERSION = "4"   # bump to force a full re-render
+RENDER_VERSION = "5"   # bump to force a full re-render
 
 TERMINAL_NAMES = {"utilities-terminal", "org.gnome.Ptyxis", "org.gnome.Terminal",
                   "org.gnome.Console", "terminal-app", "gnome-terminal", "terminal",
@@ -488,6 +488,32 @@ def render_master(src, info, style, cfg, opts):
     if style == "terminal":
         canvas.alpha_composite(vgradient(MASTER, hex_rgb(co["terminal_top"]), hex_rgb(co["terminal_bottom"])))
         canvas.alpha_composite(terminal_glyph(MASTER, plate))
+        return canvas
+
+    if style == "disc":
+        # a round icon (e.g. Steam) whose disc becomes the squircle: the disc is scaled to the
+        # plate, and everything outside it takes the disc's colour at its edge, in the same
+        # direction from the centre (so anything touching the rim runs off the edge)
+        bb = info["body"]
+        k = plate / max(bb[2] - bb[0], bb[3] - bb[1])
+        img = src.at_scale(k)
+        cx, cy = (bb[0] + bb[2]) / 2 * k, (bb[1] + bb[3]) / 2 * k
+        # see-through parts of the logo (Steam's white arm) are shown over white, as on a light plate
+        disc = Image.new("RGBA", (MASTER, MASTER), (255, 255, 255, 255))
+        disc.alpha_composite(img, (round(MASTER / 2 - cx), round(MASTER / 2 - cy)))
+        sp, dp = disc.load(), canvas.load()
+        c = MASTER / 2
+        r = plate / 2 * float(opts.get("disc_inset", 0.97))
+        for y in range(MASTER):
+            dy = y + 0.5 - c
+            for x in range(MASTER):
+                dx = x + 0.5 - c
+                d = math.hypot(dx, dy)
+                if d <= r:
+                    dp[x, y] = sp[x, y][:3] + (255,)
+                else:
+                    f = r / d
+                    dp[x, y] = sp[int(c + dx * f), int(c + dy * f)][:3] + (255,)
         return canvas
 
     if style == "filled":
