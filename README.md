@@ -4,7 +4,9 @@
 Yaru icons you know and gives every application icon the same rounded-square
 shape, in the spirit of macOS.
 
-![Preview on a dark and a light desktop](docs/preview.png)
+![Haru icon theme: Yaru app icons in squircles](docs/showcase.jpg)
+
+![The same dock with Yaru and with Haru](docs/yaru-vs-haru.jpg)
 
 - **Only app icons change.** Folders, file types, symbolic and status icons,
   and your GTK and Shell themes stay exactly as Yaru draws them.
@@ -16,6 +18,10 @@ shape, in the spirit of macOS.
 - **Follows your accent colour** and light or dark style, and updates by
   itself whenever you install or remove an app.
 - **No sudo, easy to undo.** Everything lives in your home folder.
+
+## On a dark and a light desktop
+
+![Preview on a dark and a light desktop](docs/preview.png)
 
 ## Install
 
