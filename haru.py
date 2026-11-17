@@ -532,7 +532,7 @@ def render_master(src, info, style, cfg, opts):
     layer = Image.new("RGBA", (MASTER, MASTER))
     layer.alpha_composite(img, pos) if pos[0] >= 0 and pos[1] >= 0 else layer.paste(img, pos, img)
     a = layer.getchannel("A")
-    op = float(sh["shadow_opacity"])
+    op = float(opts.get("shadow_opacity", sh["shadow_opacity"]))
     for blur, dy, strength in ((plate * 0.035, plate * 0.025, 0.55), (plate * 0.008, plate * 0.008, 0.45)):
         sa = a.filter(ImageFilter.GaussianBlur(blur)).point(lambda v: round(v * op * strength))
         shadow = Image.new("RGBA", (MASTER, MASTER), (60, 45, 25, 0))

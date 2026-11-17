@@ -37,6 +37,7 @@ terminal_bottom = "#3A1A38"
 #               background = "#FFFFFF"            (filled icons: colour behind clipped corners)
 #               plate_top = "#7C7B82"             (logo icons: plate colour, top ...)
 #               plate_bottom = "#46454C"          (... and bottom)
+#               shadow_opacity = 0                (logo icons: no contact shadow)
 #               rim_top_alpha = 0.45              (this icon's rim brightness, top / bottom)
 #               rim_bottom_alpha = 0.18
 #               plate_checker = ["#D8B48A", "#A97D56"]  (a board pattern instead of a gradient)
@@ -62,6 +63,15 @@ terminal_bottom = "#3A1A38"
 "org.gnome.design.AppIconPreview" = "art"
 "org.gnome.Adwaita1.Demo" = "art"
 "display-im7.q16" = "art"  # ImageMagick: Yaru-style wizard hat, greyscale (16 Nov 2026)
+# LibreOffice (17 Nov 2026): coloured page fills the squircle, folded corner;
+# the start centre's page is a squircle inside the grey (tools/libreoffice-art.py)
+"org.libreoffice.LibreOffice.startcenter" = "art"
+"org.libreoffice.LibreOffice.writer" = "art"
+"org.libreoffice.LibreOffice.calc" = "art"
+"org.libreoffice.LibreOffice.impress" = "art"
+"org.libreoffice.LibreOffice.draw" = "art"
+"org.libreoffice.LibreOffice.base" = "art"
+"org.libreoffice.LibreOffice.math" = "art"
 
 # Plates (rule agreed 10 Nov 2026, like Apple):
 #   cream (default) = colourful icons with no white outline
@@ -70,6 +80,22 @@ terminal_bottom = "#3A1A38"
 
 
 
+
+[overrides."com.github.tchx84.Flatseal"]  # Flatseal: black plate (17 Nov 2026)
+style = "logo"
+plate_top = "#2A2A2D"
+plate_bottom = "#0A0A0B"
+rim_top_alpha = 0.45
+rim_bottom_alpha = 0.18
+
+[overrides."org.signal.Signal"]  # Signal: its blue disc fills the squircle (17 Nov 2026)
+style = "logo"
+plate_top = "#3A44FD"
+plate_bottom = "#202BFD"
+logo_size = 1.0
+shadow_opacity = 0
+rim_top_alpha = 0.45
+rim_bottom_alpha = 0.18
 
 [overrides."it.mijorus.gearlever"]  # Gear Lever: white plate (16 Nov 2026)
 style = "logo"
