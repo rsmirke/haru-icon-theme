@@ -1,0 +1,31 @@
+name: Icon request
+description: Ask for an app's icon to get a hand-made squircle or a better plate
+title: "Icon request: "
+labels: ["icon request"]
+body:
+  - type: input
+    id: app
+    attributes:
+      label: App name
+      placeholder: e.g. GNOME Calendar
+    validations:
+      required: true
+  - type: input
+    id: icon
+    attributes:
+      label: Icon name or launcher
+      description: Run `grep ^Icon= /usr/share/applications/APP.desktop` (or the snap / Flatpak launcher), or look the app up in ~/.local/share/haru/report.txt.
+    validations:
+      required: true
+  - type: dropdown
+    id: source
+    attributes:
+      label: How is the app installed?
+      options: [deb (apt), snap, Flatpak, AppImage, other]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What would you like?
+      description: A screenshot of how it looks now helps a lot.

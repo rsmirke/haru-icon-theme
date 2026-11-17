@@ -1,0 +1,21 @@
+name: Something looks wrong
+description: An icon is missing, stays grey, or install / uninstall fails
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: A screenshot helps. If an icon still looks old, try logging out and back in first.
+    validations:
+      required: true
+  - type: textarea
+    id: report
+    attributes:
+      label: Output of `python3 ~/.local/share/haru/haru.py generate`
+      render: text
+  - type: input
+    id: system
+    attributes:
+      label: Ubuntu version and desktop
+      placeholder: e.g. Ubuntu 26.04, GNOME 49

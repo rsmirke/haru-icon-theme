@@ -115,6 +115,11 @@ glance, and `report.txt` lists how each one was made.
 - `tools/showcase/make.py`: redraws the images at the top of this page.
 - `docs/validated-icons.md`: every approved icon and its look.
 
+## Requests and problems
+
+Want a hand-made squircle for an app, or something looks wrong? Open an
+[issue](https://github.com/rsmirke/haru-icon-theme/issues/new/choose).
+
 ## Changes
 
 See [CHANGELOG.md](CHANGELOG.md).
