@@ -1,6 +1,6 @@
 # Validated icons
 
-Icons approved so far (17 November 2026). Every icon installed is validated and
+Icons approved so far (19 November 2026). Every icon installed is validated and
 frozen: its look is pinned in `config.toml`, so later changes to the automatic
 rules cannot change it.
 
@@ -9,7 +9,7 @@ drawings, or Haru's automatic rules), so you can uninstall any of these apps:
 Haru removes its icon, and if you install the app again later it draws the
 same icon again. Anki's drawing is kept on this laptop in `~/.config/haru/art`.
 
-**Validated: 106 icons**
+**Validated: 107 icons**
 
 | App | Look | Icon name |
 |---|---|---|
@@ -79,6 +79,7 @@ same icon again. Anki's drawing is kept on this laptop in `~/.config/haru/art`.
 | Mahjongg | squircle drawing from Yaru | `org.gnome.Mahjongg` |
 | Maps | squircle drawing from Yaru | `org.gnome.Maps` |
 | Metadata Cleaner | squircle drawing from the app's own icon | `io.gitlab.metadatacleaner.metadatacleaner` |
+| Micro | its round shape fills the squircle | `micro` |
 | Mines | fills the squircle | `org.gnome.Mines` |
 | Mousam | fills the squircle | `io.github.amit9838.mousam` |
 | Mudita Center | fills the squircle | `haru-mudita_center` |

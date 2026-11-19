@@ -96,6 +96,7 @@ terminal_bottom = "#3A1A38"
 "com.valvesoftware.Steam" = "disc"           # Steam: its blue disc fills the squircle
 "us.zoom.Zoom" = "disc"                      # Zoom: its blue shape fills the squircle
 "haru-discord_discord" = "disc"              # Discord (snap): its blue disc fills the squircle
+"micro" = "disc"                            # Micro (text editor): its blue disc fills the squircle
 # Frozen (17 Nov 2026): every validated icon has its look pinned, so later changes to the
 # automatic rules can never change it. See docs/validated-icons.md.
 "app.zen_browser.zen" = "filled"                         # Zen Browser
